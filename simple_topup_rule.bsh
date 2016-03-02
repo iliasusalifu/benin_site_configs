@@ -1,0 +1,38 @@
+import com.seamless.ers.interfaces.ersifclient.dto.ResultCodes;
+
+import com.seamless.ers.txe.transaction.model.ERSTopupTransaction;
+
+import com.seamless.ers.interfaces.ersifclient.dto.ResultCodes;
+
+import com.seamless.ers.txe.businesslogic.BusinessLogicTransaction;
+
+
+
+public boolean validate(BusinessLogicTransaction transaction)
+
+{
+
+
+
+        ERSTopupTransaction topupTransaction = (ERSTopupTransaction) transaction.getTransaction();
+
+        if ("55".equals(topupTransaction.getProductSKU()))
+
+        {
+
+                topupTransaction.putField("refillProfileId", "111");
+
+        }
+
+        if ("70".equals(topupTransaction.getProductSKU()))
+
+        {
+
+                topupTransaction.putField("refillProfileId", "111");
+
+        }
+
+        return true;
+
+}
+
